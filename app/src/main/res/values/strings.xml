@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">Pronto Soccorso</string>
+    <string name="title_home">Ospedali</string>
+    <string name="title_dashboard">Dashboard</string>
+    <string name="title_notifications">Notifications</string>
+    <string name="hospitals">Ospedali</string>
+    <string name="title_missions">Missioni</string>
+    <string name="title_statistics">Statistiche</string>
+</resources>
