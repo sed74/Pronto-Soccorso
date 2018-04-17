@@ -13,13 +13,19 @@ import android.widget.TextView;
 
 import com.danised.prontosoccorso.ambulance.AmbulanceFragment;
 import com.danised.prontosoccorso.hospital.HospitalFragment;
+import com.danised.prontosoccorso.settings.SettingsFragment;
 import com.danised.prontosoccorso.statistics.StatisticsFragment;
 
-public class MainActivity extends AppCompatActivity implements AmbulanceFragment.OnFragmentInteractionListener, StatisticsFragment.OnFragmentInteractionListener, HospitalFragment.OnFragmentInteractionListener {
+public class MainActivity extends AppCompatActivity implements
+        AmbulanceFragment.OnFragmentInteractionListener,
+        StatisticsFragment.OnFragmentInteractionListener,
+        HospitalFragment.OnFragmentInteractionListener,
+        SettingsFragment.OnFragmentInteractionListener {
 
     private TextView mTextMessage;
     private BottomNavigationView bottomNavigation;
     private Fragment fragment;
+    private SettingsFragment settingsFragment;
     private FragmentManager fragmentManager;
 
 //    private BottomNavigationView.OnNavigationItemSelectedListener mOnNavigationItemSelectedListener
@@ -63,9 +69,16 @@ public class MainActivity extends AppCompatActivity implements AmbulanceFragment
                     case R.id.navigation_statistics:
                         fragment = StatisticsFragment.newInstance("", "");
                         break;
+                    case R.id.navigation_settings:
+                        settingsFragment = SettingsFragment.newInstance("", "");
+                        break;
+
                 }
                 final FragmentTransaction transaction = fragmentManager.beginTransaction();
-                transaction.replace(R.id.main_container, fragment).commit();
+                if (settingsFragment == null)
+                    transaction.replace(R.id.main_container, fragment).commit();
+//                else
+//                    transaction.replace(R.id.main_container, settingsFragment).commit();
                 return true;
             }
         });
