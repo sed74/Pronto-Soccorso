@@ -2,17 +2,17 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
 
     <item
-        android:id="@+id/navigation_home"
+        android:id="@+id/navigation_hospital"
         android:icon="@drawable/ic_local_hospital_black_36dp"
         android:title="@string/hospitals" />
 
     <item
-        android:id="@+id/navigation_dashboard"
+        android:id="@+id/navigation_ambulance"
         android:icon="@drawable/ic_ambulance_black_36dp"
         android:title="@string/title_missions" />
 
     <item
-        android:id="@+id/navigation_notifications"
+        android:id="@+id/navigation_statistics"
         android:icon="@drawable/ic_calendar_range_black_36dp"
         android:title="@string/title_statistics" />
 
